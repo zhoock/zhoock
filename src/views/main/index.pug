@@ -1,0 +1,57 @@
+//- main.pug
+
+include ../article/index
+
+main(role="main")
+
+    +article(
+        "@images/content_my_photo.png",
+        "Ярослав Жук",
+        "Обо мне",
+        about
+    )
+        p 
+            a.stage__switch.dashed.js-add-content(href="#") С чем мне приходилось работать:
+        .stage__skill
+            ul.dash
+                each val of skill
+                    li= val + ";"
+
+    +article(
+        "@images/content_log.png",
+        "бревно",
+        "План",
+        planning
+    )
+    +article(
+        "@images/content_paint.png",
+        "ведро, кисть, пергамент",
+        "Дизайн",
+        design,
+        _design
+    )
+    +article(
+        "@images/content_sea.png",
+        "море",
+        "Вёрстка",
+        layout,
+        _layout,
+        "@images/content_raft.png"
+    )
+        
+        p 
+            strong Пример вёрстки анимированного плота
+
+        //- data-theme-id="10793"
+        p(
+            class="codepen"
+            data-height="434.29296875" 
+            data-default-tab="css,result"
+            data-slug-hash="vEGMxX"
+            data-pen-title="Raft Animation"
+            data-user="zhoock"
+            )
+
+        script(async src="https://cpwebassets.codepen.io/assets/embed/ei.js")
+
+        

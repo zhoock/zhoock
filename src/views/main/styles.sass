@@ -1,0 +1,49 @@
+// main
+
+main
+    width: 90%
+    margin: auto
+    max-width: 1000px
+    position: relative
+    clear: both
+
+    .stage
+        border-bottom: 0.177rem solid $white
+        padding: 1.414em 0
+
+        &:last-of-type
+            border: none
+
+        &:first-of-type .stage__img
+            text-align: center
+            
+            img 
+                border: 0.177rem solid $white
+                border-radius: 50%
+                box-sizing: content-box
+
+        &:nth-of-type(even) .stage__img
+            float: left
+
+        .stage__img
+            padding: 1.414rem
+            float: right
+            position: relative
+
+            img + img
+                position: absolute
+                left: 0
+                top: 0
+
+        .stage__skill
+            display: none
+
+            &--show 
+                display: block
+
+
+
+
+
+
+

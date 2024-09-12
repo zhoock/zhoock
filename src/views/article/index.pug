@@ -1,0 +1,26 @@
+//- article.pug
+
+mixin article(currentSrc, a, heading, text, list, raft)
+	article.stage
+		.stage__img
+			img(
+				src=currentSrc
+				alt=a
+				)
+			
+			if raft
+				img.raft(
+					src=raft
+					alt="Плот"
+					)
+				
+		block heading
+			h3 #{heading}
+		p #{text}
+		
+		if list
+			ul.dash
+				each val in list
+					li= val + ";"
+		if block
+			block

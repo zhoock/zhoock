@@ -1,0 +1,154 @@
+// layout
+//
+//
+
+*
+  margin: 0
+  padding: 0
+  outline: 0
+  box-sizing: border-box
+
+html, body
+  height: 100%
+
+html,
+button,
+input,
+select,
+textarea
+  color: $base-text
+  font-family: $base-font-family
+  font-weight: $light
+
+body
+  font-size: $base-font-size
+  line-height: $base-line-height
+  background: $body-color
+
+  p,
+  iframe
+    margin-bottom: 1.414rem
+
+  h1, h2, h3, ul, p  
+    font-weight: $base-font-weight
+
+  h1
+    font-size: 3.998rem
+    line-height: 4.497rem
+    font-weight: $bold
+    color: $white
+
+  h2
+    font-size: 1.999rem
+    line-height: 2.249rem
+    font-style: italic
+    color: $white
+
+  h3
+    font-size: 2.827em
+    line-height: 4.497rem
+    font-weight: $light
+    color: $mustard
+    text:
+      align: left
+      transform: uppercase
+
+    &.before-list
+      margin: 0
+
+  ul
+    list-style: none
+    margin-bottom: 1.414rem
+
+    &.dash li:before
+      content: "— "
+
+  a:link,
+  a:visited
+    color: $link
+    text-decoration: underline
+    outline: none
+    transition: all .5s
+
+  a:hover,
+  a:active
+    color: lighten($link, 10%)
+
+  a.dashed:link,
+  a.dashed:visited
+    text-decoration: none
+    color: $link
+    border-bottom: 1px dashed $link
+
+  a.dashed:hover,
+  a.dashed:active
+    text-decoration: none
+    border-bottom: 1px dashed lighten($link, 10%)
+    color: lighten($link, 10%)
+
+  img, embed, object, video
+    max-width: 100%
+
+
+
+/* Small screen! */
+@media screen and (max-device-width: 480px), screen and (max-width: 1024px)
+
+  header
+    hgroup
+      h1 
+        font-size: 2.827em
+
+      h2
+        font-size: 1.414em
+
+  main
+    .stage
+      .stage__img
+        float: none !important
+        width: 55vw
+        margin: auto
+        display: block
+        
+        img + img
+          width: 66%
+          left: 15% !important
+          top: 18% !important
+
+      h3
+        text-align: center
+
+
+// Raft
+//
+//
+
+.raft
+  animation: raft 6s infinite ease-in-out
+
+@keyframes raft
+  0%
+    transform-origin: 70% 70%
+    transition: ease-out
+
+  20%
+    transform: translate(-2px, -8px) rotate(-4deg)
+
+  50%
+    transform: translate(-1px, 0px) rotate(2deg)
+    transform-origin: 30% 100%
+
+  70%
+    transform: translate(3px, 10px) rotate(-3deg)
+
+  80%
+    transform: translate(16px, 0px) rotate(1deg)
+    transform-origin: 90% 80%
+
+  90%
+    transform: translate(-4px, 3px) rotate(3deg)
+
+  100%
+    transform: translate(0, 0)
+    transform-origin: 30% 90%
+    transition: ease-in
